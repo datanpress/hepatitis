@@ -26,4 +26,50 @@ var basic = new Datamap({
 
       return {path: path, projection: projection};
   },
+  fills: {
+    defaultFill: "#CCC",
+    diferenciado: "#01b0e9",
+    generica: "#008dab",
+    voluntaria: "#019bc9"
+  },
+  data: {
+    USA: { fillKey: "diferenciado" },
+    ESP: { fillKey: "diferenciado" },
+    FRA: { fillKey: "diferenciado" },
+    IRL: { fillKey: "diferenciado" },
+    GBR: { fillKey: "diferenciado" },
+    EGY: { fillKey: "diferenciado" },
+    IND: { fillKey: "diferenciado" },
+    BGD: { fillKey: "voluntaria" },
+    AFG: { fillKey: "generica" },
+    NPL: { fillKey: "generica" },
+    MMR: { fillKey: "generica" },
+    VNM: { fillKey: "generica" },
+    MDG: { fillKey: "generica" },
+    LSO: { fillKey: "generica" },
+    MOZ: { fillKey: "generica" },
+    AGO: { fillKey: "generica" },
+    ZMB: { fillKey: "generica" },
+    MWI: { fillKey: "generica" },
+    TZA: { fillKey: "generica" },
+    UGA: { fillKey: "generica" },
+    COD: { fillKey: "generica" },
+    SSD: { fillKey: "generica" },
+    SDN: { fillKey: "generica" },
+    TCD: { fillKey: "generica" },
+    CAF: { fillKey: "generica" },
+    NER: { fillKey: "generica" },
+    BEN: { fillKey: "generica" },
+    LBR: { fillKey: "generica" },
+    SLE: { fillKey: "generica" },
+    TGO: { fillKey: "generica" },
+    BFA: { fillKey: "generica" },
+    MLI: { fillKey: "generica" },
+    MRT: { fillKey: "generica" },
+    SEN: { fillKey: "generica" },
+    GNB: { fillKey: "generica" },
+    GIN: { fillKey: "generica" },
+    GNQ: { fillKey: "generica" }
+  }
 });
+
