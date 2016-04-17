@@ -13,6 +13,17 @@ if(lang!=null && lang!=""){
 
 */
 
+var basic = new Datamap({
+  element: document.getElementById("mapa"),
+  setProjection: function(element, options) {
+      var projection = d3.geo.ginzburg5()
+                             .center([0, 0])
+                             .scale(100)
+                             .translate([element.offsetWidth / 2, element.offsetHeight / 2]);
 
-console.log('test')
+      var path =  d3.geo.path()
+              .projection(projection);
 
+      return {path: path, projection: projection};
+  },
+});
