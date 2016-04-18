@@ -17,8 +17,8 @@ var basic = new Datamap({
   element: document.getElementById("mapa"),
   setProjection: function(element, options) {
       var projection = d3.geo.ginzburg5()
-                             .center([0, 0])
-                             .scale(100)
+                             .center([0, 15])
+                             .scale(140)
                              .translate([element.offsetWidth / 2, element.offsetHeight / 2]);
 
       var path =  d3.geo.path()
@@ -28,9 +28,9 @@ var basic = new Datamap({
   },
   fills: {
     defaultFill: "#CCC",
-    diferenciado: "#01b0e9",
-    generica: "#008dab",
-    voluntaria: "#019bc9"
+    diferenciado: "#f59c00",
+    generica: "#af9959",
+    voluntaria: "#d7ae1c"
   },
   data: {
     USA: { fillKey: "diferenciado" },
