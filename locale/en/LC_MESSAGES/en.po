@@ -1,0 +1,37 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2016-04-18 11:26+0200\n"
+"PO-Revision-Date: 2016-04-18 11:27+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.4\n"
+"X-Poedit-Basepath: ../../../2_Grafico\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: index.html\n"
+"X-Poedit-SearchPath-1: main.js\n"
+
+#: main.js:2
+msgid "Países con ingresos bajos"
+msgstr "Low-income countries"
+
+#: main.js:3
+msgid "Países con ingresos medios"
+msgstr "Middle-income countries"
+
+#: main.js:4
+msgid "Países con ingresos altos"
+msgstr "High-income countries"
+
+#: main.js:41
+msgid "Incidencia de la hepatitis C"
+msgstr "Incidence of Hepatitis C"
+
+#: main.js:54
+msgid "Fuente: Gràfico de elaboración propia"
+msgstr "Source: ISGlobal. 2016. Hepatitis C: The New Battlefield for Access to Essential Medicines. Report 25, Innovation and Access series."
