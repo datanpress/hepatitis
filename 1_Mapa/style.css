@@ -28,7 +28,7 @@ th span:before{
   color: #d7ae1c
 }
 #gen{
-  color: #f59c00
+  color: #af9959
 }
 td, th{
   padding: 1px 20px;
@@ -40,6 +40,7 @@ h4{
 #fuente{
   text-align: right;
   padding: 0 10px;
+  font-size: 0.8em;
 }
 /*body{
   height: 0;
