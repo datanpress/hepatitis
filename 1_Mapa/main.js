@@ -36,7 +36,6 @@ var basic = new Datamap({
     USA: { fillKey: "diferenciado" },
     ESP: { fillKey: "diferenciado" },
     FRA: { fillKey: "diferenciado" },
-    IRL: { fillKey: "diferenciado" },
     GBR: { fillKey: "diferenciado" },
     EGY: { fillKey: "diferenciado" },
     IND: { fillKey: "diferenciado" },
@@ -69,7 +68,40 @@ var basic = new Datamap({
     SEN: { fillKey: "generica" },
     GNB: { fillKey: "generica" },
     GIN: { fillKey: "generica" },
+    GMB: { fillKey: "generica" },
+    YEM: { fillKey: "generica" },
     GNQ: { fillKey: "generica" }
   }
 });
 
+
+basic.bubbles([
+  {
+    name: 'Not a bomb, but centered on Brazil',
+    radius: 5,
+    centered: 'VUT',
+    country: 'USA',
+    yeild: 0,
+    fillKey: 'generica',
+    date: '1954-03-01'
+  },
+  {
+    radius: 5,
+    name: 'Kiribati',
+    fillKey: 'generica',
+    latitude: -3.3704,
+    longitude: 168.7340
+  },{
+    radius: 5,
+    name: 'Solomon Islands',
+    fillKey: 'generica',
+    latitude: -9.6457,
+    longitude: 160.1562
+  },{
+    radius: 5,
+    name: 'Haiti',
+    fillKey: 'generica',
+    latitude: 18.9712,
+    longitude: -72.2853
+  }
+]);
