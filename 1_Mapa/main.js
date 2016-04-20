@@ -1,23 +1,55 @@
-
-/*var lang = getParameterByName('lang');
-if(lang!=null && lang!=""){
-  //set the locale in which the messages will be translated
-  iJS.i18n.setlocale(lang) ;
-  //add domain where to find messages data
-  iJS.i18n.bindtextdomain(lang, "../locale", "po") ;
-  //Always do this after a `setlocale` or a `bindtextdomain` call.
-  iJS.i18n.try_load_lang() ; //will load and parse messages data from the setting catalog.
+var lang = getParameterByName('lang');
+if (lang != null && lang != "") {
+    //set the locale in which the messages will be translated
+    iJS.i18n.setlocale(lang);
+    //add domain where to find messages data
+    iJS.i18n.bindtextdomain(lang, "../locale", "po");
+    //Always do this after a `setlocale` or a `bindtextdomain` call.
+    iJS.i18n.try_load_lang(); //will load and parse messages data from the setting catalog.
 }
 
-//d3.select('.title').text(iJS._("Las cifras de la enfermedad del Chagas"));
-
-*/
+d3.select('.title').text(iJS._("Precio del tratamiento con Sofosbuvir y tipo de acuerdo negociado"));
+d3.select('.subtitle').text(iJS._("Precios con Sofosbuvir durante 12 semanas (en dólares)"));
+d3.select('#dif').text(iJS._("Precio diferenciado"));
+d3.select('#vol').text(iJS._("Licencia voluntaria"));
+d3.select('#gen').text(iJS._("Competencia genérica"));
+d3.select('#fuente').html(iJS._("Fuente: ISGlobal. 2016. Hepatitis C: el nuevo campo de batalla por el acceso a medicamentos esenciales. Informe 25, serie \"Innovación y acceso\"."));
+d3.select('#dataTable tbody').html(iJS._('<tr> \
+  <td>Estados Unidos</td> \
+  <td>84.000$</td> \
+  <td>Países Menos Adelantados</td> \
+  <td>2.000$</td> \
+  <td>Bangladesh</td> \
+  <td>840$</td> \
+</tr> \
+<tr> \
+  <td>Francia</td> \
+  <td>61.000$</td> \
+</tr> \
+<tr> \
+  <td>Reino Unido</td> \
+  <td>54.000$</td> \
+</tr> \
+<tr> \
+  <td>España</td> \
+  <td>25.000$</td> \
+</tr> \
+<tr> \
+  <td>Egipto</td> \
+  <td>900$</td> \
+</tr> \
+<tr> \
+  <td>India</td> \
+  <td>900$</td> \
+</tr>'));
 
 var basic = new Datamap({
   element: document.getElementById("mapa"),
+  responsive: true,
+  // aspectRatio:0.75,
   setProjection: function(element, options) {
       var projection = d3.geo.ginzburg5()
-                             .center([0, 15])
+                             .center([25, 15])
                              .scale(140)
                              .translate([element.offsetWidth / 2, element.offsetHeight / 2]);
 
@@ -34,20 +66,20 @@ var basic = new Datamap({
       if (data!=null){
         if(data.fillKey=='diferenciado'){
           if(geography.properties.name=='United States of America'){
-            return '<div class="hoverinfo"><strong>Precio diferenciado:</strong> 84.000$</div>';  
+            return '<div class="hoverinfo"><strong>Precio diferenciado:</strong> 84.000$</div>';
           }else if(geography.properties.name=='Spain'){
-            return '<div class="hoverinfo"><strong>Precio diferenciado:</strong>: 25.000$</div>';  
+            return '<div class="hoverinfo"><strong>Precio diferenciado:</strong>: 25.000$</div>';
           }else if(geography.properties.name=='France'){
-            return '<div class="hoverinfo"><strong>Precio diferenciado:</strong>: 61.00$</div>';  
+            return '<div class="hoverinfo"><strong>Precio diferenciado:</strong>: 61.00$</div>';
           }else if(geography.properties.name=='United Kingdom'){
-            return '<div class="hoverinfo"><strong>Precio diferenciado:</strong>: 54.000$</div>';  
+            return '<div class="hoverinfo"><strong>Precio diferenciado:</strong>: 54.000$</div>';
           }else if(geography.properties.name=='Egypt'){
-            return '<div class="hoverinfo"><strong>Precio diferenciado:</strong>: 900$</div>';  
+            return '<div class="hoverinfo"><strong>Precio diferenciado:</strong>: 900$</div>';
           }else if(geography.properties.name=='India'){
-            return '<div class="hoverinfo"><strong>Precio diferenciado:</strong>: 900$</div>';  
+            return '<div class="hoverinfo"><strong>Precio diferenciado:</strong>: 900$</div>';
           }else{
             console.log(geography.properties.name)
-            return '<div class="hoverinfo"><strong>Precio diferenciado:</strong></div>';  
+            return '<div class="hoverinfo"><strong>Precio diferenciado:</strong></div>';
           }
         }else if(data.fillKey=='generica'){
           return '<div class="hoverinfo"><strong>Competencia genérica:</strong> 840$</div>';
@@ -147,3 +179,10 @@ basic.bubbles([
     longitude: -72.2853
   }
 ]);
+
+
+
+
+d3.select(window).on('resize', function() {
+    basic.resize();
+});

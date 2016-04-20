@@ -12,10 +12,17 @@
 
 <body>
  <div>
-	<h3>Precio del tratamiento con Sofosbuvir y tipo de acuerdo negociado</h3>
-	<div id="mapa" style="height:350px;width:100%;position:relative;"></div>
-	<h4>Precios con Sofosbuvir durante 12 semanas (en dólares)</h4>
-	<table align="center">
+	<h3 class="title">Precio del tratamiento con Sofosbuvir y tipo de acuerdo negociado</h3>
+	<!-- <div id="mapa" style="height:350px;width:100%;position:relative;"></div> -->
+  <div id="mapa" style="height:30%;max-width:100%"></div>
+	<!-- <h4>Precios con Sofosbuvir durante 12 semanas (en dólares)</h4> -->
+  <table align="center">
+    <tr>
+      <td>
+        <h4 class="subtitle" style="padding:0">Precios con Sofosbuvir durante 12 semanas (en dólares)</h4>
+      </td>
+    </tr>
+	<table align="center" id="dataTable">
 		<thead>
 			<tr>
 				<th colspan="2"><span id="dif">Precio diferenciado</span></th>

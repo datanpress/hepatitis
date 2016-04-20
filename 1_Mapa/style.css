@@ -7,11 +7,12 @@ html,body{
   padding: 0;
 }
 h3{
-  text-align: center
+  text-align: center;
+  font-size:3.1vh;
 }
 table{
     align: center;
-    width: 80%;
+    width: 100%;
 }
 th{
   text-align: left;
@@ -74,4 +75,9 @@ svg tspan.active{
 }
 svg text{
   cursor: default;
+}*/
+
+/*table {
+  width: 100%;
+  border-collapse: collapse;
 }*/
