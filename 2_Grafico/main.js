@@ -69,8 +69,9 @@ var svg = container.append("svg")
     .append('text')
     .attr("text-anchor", "end")
     .attr("font-weight", "300")
-    .attr("font-size", "12")
-    .text(iJS._("Fuente: Gràfico de elaboración propia"))
+    .attr("font-size", "10")
+    .attr("font-style", "italic")
+    .text(iJS._("Fuente: ISGlobal. 2016. Hepatitis C: el nuevo campo de batalla por el acceso a medicamentos esenciales. Informe 25, serie \"Innovación y acceso\"."))
     .select(function() {
         return this.parentNode;
     })

@@ -1,4 +1,48 @@
 /* svg responsive*/
+html,body{
+  font-family:Roboto;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+h3{
+  text-align: center;
+  font-size:3.1vh;
+}
+table{
+    align: center;
+    width: 100%;
+}
+th{
+  text-align: left;
+}
+th span:before{
+  content: '\25A0';
+  font-size: large;
+  margin: 3px;
+}
+#dif{
+  color: #f59c00
+}
+#vol{
+  color: #d7ae1c
+}
+#gen{
+  color: #af9959
+}
+td, th{
+  padding: 1px 20px;
+
+}
+h4{
+  padding: 0 10px;
+}
+#fuente{
+  text-align: right;
+  padding: 0 10px;
+  font-size: 0.8em;
+}
 /*body{
   height: 0;
   padding-top: 48%;
@@ -31,4 +75,9 @@ svg tspan.active{
 }
 svg text{
   cursor: default;
+}*/
+
+/*table {
+  width: 100%;
+  border-collapse: collapse;
 }*/
