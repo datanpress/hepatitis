@@ -43,106 +43,94 @@ d3.select('#dataTable tbody').html(iJS._('<tr> \
   <td>900$</td> \
 </tr>'));
 
-var basic = new Datamap({
-  element: document.getElementById("mapa"),
-  responsive: true,
-  // aspectRatio:0.75,
-  setProjection: function(element, options) {
-      var projection = d3.geo.ginzburg5()
-                             .center([25, 15])
-                             .scale(140)
-                             .translate([element.offsetWidth / 2, element.offsetHeight / 2]);
 
-      var path =  d3.geo.path()
-              .projection(projection);
 
-      return {path: path, projection: projection};
-  },
-  geographyConfig: {
-    borderWidth: 0.5,
-    highlightOnHover: false,
-    popupOnHover: true,
-    popupTemplate: function(geography, data) { //this function should just return a string
-      if (data!=null){
-        if(data.fillKey=='diferenciado'){
-          if(geography.properties.name=='United States of America'){
-            return '<div class="hoverinfo"><strong>Precio diferenciado:</strong> 84.000$</div>';
-          }else if(geography.properties.name=='Spain'){
-            return '<div class="hoverinfo"><strong>Precio diferenciado:</strong>: 25.000$</div>';
-          }else if(geography.properties.name=='France'){
-            return '<div class="hoverinfo"><strong>Precio diferenciado:</strong>: 61.00$</div>';
-          }else if(geography.properties.name=='United Kingdom'){
-            return '<div class="hoverinfo"><strong>Precio diferenciado:</strong>: 54.000$</div>';
-          }else if(geography.properties.name=='Egypt'){
-            return '<div class="hoverinfo"><strong>Precio diferenciado:</strong>: 900$</div>';
-          }else if(geography.properties.name=='India'){
-            return '<div class="hoverinfo"><strong>Precio diferenciado:</strong>: 900$</div>';
-          }else{
-            console.log(geography.properties.name)
-            return '<div class="hoverinfo"><strong>Precio diferenciado:</strong></div>';
+var map = new Datamap({
+    element: document.getElementById('container1'),
+    responsive: true,
+    geographyConfig: {
+      borderWidth: 0.5,
+      highlightOnHover: false,
+      popupOnHover: true,
+      popupTemplate: function(geography, data) { //this function should just return a string
+        if (data!=null){
+          if(data.fillKey=='diferenciado'){
+            if(geography.properties.name=='United States of America'){
+              return '<div class="hoverinfo"><strong>Precio diferenciado:</strong> 84.000$</div>';
+            }else if(geography.properties.name=='Spain'){
+              return '<div class="hoverinfo"><strong>Precio diferenciado:</strong>: 25.000$</div>';
+            }else if(geography.properties.name=='France'){
+              return '<div class="hoverinfo"><strong>Precio diferenciado:</strong>: 61.00$</div>';
+            }else if(geography.properties.name=='United Kingdom'){
+              return '<div class="hoverinfo"><strong>Precio diferenciado:</strong>: 54.000$</div>';
+            }else if(geography.properties.name=='Egypt'){
+              return '<div class="hoverinfo"><strong>Precio diferenciado:</strong>: 900$</div>';
+            }else if(geography.properties.name=='India'){
+              return '<div class="hoverinfo"><strong>Precio diferenciado:</strong>: 900$</div>';
+            }else{
+              console.log(geography.properties.name)
+              return '<div class="hoverinfo"><strong>Precio diferenciado:</strong></div>';
+            }
+          }else if(data.fillKey=='generica'){
+            return '<div class="hoverinfo"><strong>Competencia genérica:</strong> 840$</div>';
+          }else if(data.fillKey=='voluntaria'){
+            return '<div class="hoverinfo"><strong>Licencia voluntaria:</strong> 2.000$</div>';
           }
-        }else if(data.fillKey=='generica'){
-          return '<div class="hoverinfo"><strong>Competencia genérica:</strong> 840$</div>';
-        }else if(data.fillKey=='voluntaria'){
-          return '<div class="hoverinfo"><strong>Licencia voluntaria:</strong> 2.000$</div>';
         }
-      }
+      },
     },
-  },
-  fills: {
-    defaultFill: "#CCC",
-    diferenciado: "#f59c00",
-    generica: "#d7ae1c",
-    voluntaria: "#af9959"
-  },
-  data: {
-    USA: { fillKey: "diferenciado" },
-    ESP: { fillKey: "diferenciado" },
-    FRA: { fillKey: "diferenciado" },
-    GBR: { fillKey: "diferenciado" },
-    EGY: { fillKey: "diferenciado" },
-    IND: { fillKey: "diferenciado" },
-    BGD: { fillKey: "generica" },
-    AFG: { fillKey: "voluntaria" },
-    NPL: { fillKey: "voluntaria" },
-    MMR: { fillKey: "voluntaria" },
-    VNM: { fillKey: "voluntaria" },
-    MDG: { fillKey: "voluntaria" },
-    LSO: { fillKey: "voluntaria" },
-    MOZ: { fillKey: "voluntaria" },
-    AGO: { fillKey: "voluntaria" },
-    ZMB: { fillKey: "voluntaria" },
-    MWI: { fillKey: "voluntaria" },
-    TZA: { fillKey: "voluntaria" },
-    UGA: { fillKey: "voluntaria" },
-    COD: { fillKey: "voluntaria" },
-    SSD: { fillKey: "voluntaria" },
-    SDN: { fillKey: "voluntaria" },
-    TCD: { fillKey: "voluntaria" },
-    CAF: { fillKey: "voluntaria" },
-    NER: { fillKey: "voluntaria" },
-    BEN: { fillKey: "voluntaria" },
-    LBR: { fillKey: "voluntaria" },
-    SLE: { fillKey: "voluntaria" },
-    TGO: { fillKey: "voluntaria" },
-    BFA: { fillKey: "voluntaria" },
-    MLI: { fillKey: "voluntaria" },
-    MRT: { fillKey: "voluntaria" },
-    SEN: { fillKey: "voluntaria" },
-    GNB: { fillKey: "voluntaria" },
-    GIN: { fillKey: "voluntaria" },
-    GMB: { fillKey: "voluntaria" },
-    YEM: { fillKey: "voluntaria" },
-    BTN: { fillKey: "voluntaria" },
-    LAO: { fillKey: "voluntaria" },
-    KHM: { fillKey: "voluntaria" },
-    TLS: { fillKey: "voluntaria" },
-    GNQ: { fillKey: "voluntaria" }
-  }
+    fills: {
+      defaultFill: "#CCC",
+      diferenciado: "#f59c00",
+      generica: "#d7ae1c",
+      voluntaria: "#af9959"
+    },
+    data: {
+      USA: { fillKey: "diferenciado" },
+      ESP: { fillKey: "diferenciado" },
+      FRA: { fillKey: "diferenciado" },
+      GBR: { fillKey: "diferenciado" },
+      EGY: { fillKey: "diferenciado" },
+      IND: { fillKey: "diferenciado" },
+      BGD: { fillKey: "generica" },
+      AFG: { fillKey: "voluntaria" },
+      NPL: { fillKey: "voluntaria" },
+      MMR: { fillKey: "voluntaria" },
+      VNM: { fillKey: "voluntaria" },
+      MDG: { fillKey: "voluntaria" },
+      LSO: { fillKey: "voluntaria" },
+      MOZ: { fillKey: "voluntaria" },
+      AGO: { fillKey: "voluntaria" },
+      ZMB: { fillKey: "voluntaria" },
+      MWI: { fillKey: "voluntaria" },
+      TZA: { fillKey: "voluntaria" },
+      UGA: { fillKey: "voluntaria" },
+      COD: { fillKey: "voluntaria" },
+      SSD: { fillKey: "voluntaria" },
+      SDN: { fillKey: "voluntaria" },
+      TCD: { fillKey: "voluntaria" },
+      CAF: { fillKey: "voluntaria" },
+      NER: { fillKey: "voluntaria" },
+      BEN: { fillKey: "voluntaria" },
+      LBR: { fillKey: "voluntaria" },
+      SLE: { fillKey: "voluntaria" },
+      TGO: { fillKey: "voluntaria" },
+      BFA: { fillKey: "voluntaria" },
+      MLI: { fillKey: "voluntaria" },
+      MRT: { fillKey: "voluntaria" },
+      SEN: { fillKey: "voluntaria" },
+      GNB: { fillKey: "voluntaria" },
+      GIN: { fillKey: "voluntaria" },
+      GMB: { fillKey: "voluntaria" },
+      YEM: { fillKey: "voluntaria" },
+      BTN: { fillKey: "voluntaria" },
+      LAO: { fillKey: "voluntaria" },
+      KHM: { fillKey: "voluntaria" },
+      TLS: { fillKey: "voluntaria" },
+      GNQ: { fillKey: "voluntaria" }
+    }
 });
-
-
-basic.bubbles([
+map.bubbles([
   {
     name: 'Vanuatu',
     radius: 5,
@@ -179,10 +167,6 @@ basic.bubbles([
     longitude: -72.2853
   }
 ]);
-
-
-
-
-d3.select(window).on('resize', function() {
-    basic.resize();
+window.addEventListener('resize', function(event){
+    map.resize();
 });
